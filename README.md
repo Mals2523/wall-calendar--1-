@@ -22,19 +22,6 @@ A polished, fully responsive wall calendar component built with **Next.js 14** (
 
 ---
 
-## Architecture decisions
-
-| Decision | Rationale |
-|---|---|
-| Next.js App Router | Modern file-based routing, RSC-ready, easy Vercel deploy |
-| CSS custom properties for theming | Theme switching with zero JS re-renders — just update `--accent` on the root |
-| Single `WallCalendar` parent with lifted state | Calendar grid, notes, and hero all need access to `selStart/selEnd`; colocating in one parent keeps data flow simple |
-| `localStorage` for persistence | Assessment spec says no backend; `localStorage` is the right client-side solution for notes + theme |
-| Framer Motion `AnimatePresence` | Clean page-flip on month change with direction awareness (forward vs back) |
-| Monday-first grid | Standard calendar convention outside the US; configurable by changing the `DOW` offset in `CalendarGrid` |
-
----
-
 ## Run locally
 
 ```bash
